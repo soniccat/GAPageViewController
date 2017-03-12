@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60722861E759C0A008A48E4 /* GAPagerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D60722841E759C0A008A48E4 /* GAPagerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D60722891E759C0A008A48E4 /* GAPagerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60722821E759C0A008A48E4 /* GAPagerViewController.framework */; };
+		D607228A1E759C0A008A48E4 /* GAPagerViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D60722821E759C0A008A48E4 /* GAPagerViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D60722921E759CC0008A48E4 /* GAReuseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722901E759CC0008A48E4 /* GAReuseQueue.swift */; };
+		D60722931E759CC0008A48E4 /* GAReusableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722911E759CC0008A48E4 /* GAReusableObject.swift */; };
+		D607229A1E759CCB008A48E4 /* GABasePagerViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722941E759CCA008A48E4 /* GABasePagerViewConroller.swift */; };
+		D607229B1E759CCB008A48E4 /* GAPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722951E759CCA008A48E4 /* GAPagerCell.swift */; };
+		D607229C1E759CCB008A48E4 /* GAPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722961E759CCA008A48E4 /* GAPagerViewController.swift */; };
+		D607229D1E759CCB008A48E4 /* GALogExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722971E759CCA008A48E4 /* GALogExtension.swift */; };
+		D607229E1E759CCB008A48E4 /* GAPagerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722981E759CCA008A48E4 /* GAPagerLayout.swift */; };
+		D607229F1E759CCB008A48E4 /* GAReusableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60722991E759CCA008A48E4 /* GAReusableController.swift */; };
 		D69E14E11E59A1A200F0B6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E14E01E59A1A200F0B6B2 /* AppDelegate.swift */; };
 		D69E14E31E59A1A200F0B6B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E14E21E59A1A200F0B6B2 /* FirstViewController.swift */; };
 		D69E14E51E59A1A200F0B6B2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E14E41E59A1A200F0B6B2 /* SecondViewController.swift */; };
@@ -15,15 +26,17 @@
 		D69E14ED1E59A1A200F0B6B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69E14EB1E59A1A200F0B6B2 /* LaunchScreen.storyboard */; };
 		D69E15021E59B43D00F0B6B2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E15001E59B43D00F0B6B2 /* DataViewController.swift */; };
 		D69E15031E59B43D00F0B6B2 /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69E15011E59B43D00F0B6B2 /* DataViewController.xib */; };
-		D6BF8CBD1E6C54390065A26B /* GAReusableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BF8CBC1E6C54390065A26B /* GAReusableObject.swift */; };
-		D6BF8CBF1E6C5B1F0065A26B /* GAReusableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BF8CBE1E6C5B1F0065A26B /* GAReusableController.swift */; };
-		D6DC97511E6B2B3D0007565B /* GABasePagerViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC974E1E6B2B3D0007565B /* GABasePagerViewConroller.swift */; };
-		D6DC97521E6B2B3D0007565B /* GAPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC974F1E6B2B3D0007565B /* GAPagerCell.swift */; };
-		D6DC97531E6B2B3D0007565B /* GAPagerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC97501E6B2B3D0007565B /* GAPagerLayout.swift */; };
-		D6DC97551E6B36BF0007565B /* GAPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC97541E6B36BF0007565B /* GAPagerViewController.swift */; };
-		D6DC97571E6B4E900007565B /* GALogExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC97561E6B4E900007565B /* GALogExtension.swift */; };
-		D6DC975C1E6C4FE90007565B /* GAReuseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC975B1E6C4FE90007565B /* GAReuseQueue.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D60722871E759C0A008A48E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D69E14D51E59A1A200F0B6B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D60722811E759C0A008A48E4;
+			remoteInfo = GAPagerViewController;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D6A81E041E759952006D8F97 /* Embed Frameworks */ = {
@@ -32,6 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D607228A1E759C0A008A48E4 /* GAPagerViewController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +53,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D60722821E759C0A008A48E4 /* GAPagerViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GAPagerViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60722841E759C0A008A48E4 /* GAPagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAPagerViewController.h; sourceTree = "<group>"; };
+		D60722851E759C0A008A48E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D60722901E759CC0008A48E4 /* GAReuseQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReuseQueue.swift; sourceTree = "<group>"; };
+		D60722911E759CC0008A48E4 /* GAReusableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReusableObject.swift; sourceTree = "<group>"; };
+		D60722941E759CCA008A48E4 /* GABasePagerViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GABasePagerViewConroller.swift; sourceTree = "<group>"; };
+		D60722951E759CCA008A48E4 /* GAPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerCell.swift; sourceTree = "<group>"; };
+		D60722961E759CCA008A48E4 /* GAPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerViewController.swift; sourceTree = "<group>"; };
+		D60722971E759CCA008A48E4 /* GALogExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GALogExtension.swift; sourceTree = "<group>"; };
+		D60722981E759CCA008A48E4 /* GAPagerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerLayout.swift; sourceTree = "<group>"; };
+		D60722991E759CCA008A48E4 /* GAReusableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReusableController.swift; sourceTree = "<group>"; };
 		D69E14DD1E59A1A200F0B6B2 /* PagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69E14E01E59A1A200F0B6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69E14E21E59A1A200F0B6B2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,31 +74,65 @@
 		D69E14EE1E59A1A200F0B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D69E15001E59B43D00F0B6B2 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		D69E15011E59B43D00F0B6B2 /* DataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
-		D6BF8CBC1E6C54390065A26B /* GAReusableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReusableObject.swift; sourceTree = "<group>"; };
-		D6BF8CBE1E6C5B1F0065A26B /* GAReusableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReusableController.swift; sourceTree = "<group>"; };
-		D6DC974E1E6B2B3D0007565B /* GABasePagerViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GABasePagerViewConroller.swift; sourceTree = "<group>"; };
-		D6DC974F1E6B2B3D0007565B /* GAPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerCell.swift; sourceTree = "<group>"; };
-		D6DC97501E6B2B3D0007565B /* GAPagerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerLayout.swift; sourceTree = "<group>"; };
-		D6DC97541E6B36BF0007565B /* GAPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPagerViewController.swift; sourceTree = "<group>"; };
-		D6DC97561E6B4E900007565B /* GALogExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GALogExtension.swift; sourceTree = "<group>"; };
-		D6DC975B1E6C4FE90007565B /* GAReuseQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAReuseQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D69E14DA1E59A1A200F0B6B2 /* Frameworks */ = {
+		D607227E1E759C0A008A48E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D69E14DA1E59A1A200F0B6B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60722891E759C0A008A48E4 /* GAPagerViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60722831E759C0A008A48E4 /* GAPagerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D607228F1E759C65008A48E4 /* GAReuseQueue */,
+				D607228E1E759C46008A48E4 /* PagerController */,
+				D60722841E759C0A008A48E4 /* GAPagerViewController.h */,
+				D60722851E759C0A008A48E4 /* Info.plist */,
+			);
+			path = GAPagerViewController;
+			sourceTree = "<group>";
+		};
+		D607228E1E759C46008A48E4 /* PagerController */ = {
+			isa = PBXGroup;
+			children = (
+				D60722941E759CCA008A48E4 /* GABasePagerViewConroller.swift */,
+				D60722951E759CCA008A48E4 /* GAPagerCell.swift */,
+				D60722961E759CCA008A48E4 /* GAPagerViewController.swift */,
+				D60722971E759CCA008A48E4 /* GALogExtension.swift */,
+				D60722981E759CCA008A48E4 /* GAPagerLayout.swift */,
+				D60722991E759CCA008A48E4 /* GAReusableController.swift */,
+			);
+			path = PagerController;
+			sourceTree = "<group>";
+		};
+		D607228F1E759C65008A48E4 /* GAReuseQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D60722901E759CC0008A48E4 /* GAReuseQueue.swift */,
+				D60722911E759CC0008A48E4 /* GAReusableObject.swift */,
+			);
+			path = GAReuseQueue;
+			sourceTree = "<group>";
+		};
 		D69E14D41E59A1A200F0B6B2 = {
 			isa = PBXGroup;
 			children = (
 				D69E14DF1E59A1A200F0B6B2 /* PagerExample */,
+				D60722831E759C0A008A48E4 /* GAPagerViewController */,
 				D69E14DE1E59A1A200F0B6B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D69E14DD1E59A1A200F0B6B2 /* PagerExample.app */,
+				D60722821E759C0A008A48E4 /* GAPagerViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,8 +149,6 @@
 		D69E14DF1E59A1A200F0B6B2 /* PagerExample */ = {
 			isa = PBXGroup;
 			children = (
-				D6DC975A1E6C4F980007565B /* GAReuseQueue */,
-				D6DC974D1E6B23590007565B /* GAPagerViewController */,
 				D69E14E01E59A1A200F0B6B2 /* AppDelegate.swift */,
 				D69E14E21E59A1A200F0B6B2 /* FirstViewController.swift */,
 				D69E14E41E59A1A200F0B6B2 /* SecondViewController.swift */,
@@ -104,31 +162,38 @@
 			path = PagerExample;
 			sourceTree = "<group>";
 		};
-		D6DC974D1E6B23590007565B /* GAPagerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D6DC974E1E6B2B3D0007565B /* GABasePagerViewConroller.swift */,
-				D6DC97541E6B36BF0007565B /* GAPagerViewController.swift */,
-				D6DC974F1E6B2B3D0007565B /* GAPagerCell.swift */,
-				D6DC97501E6B2B3D0007565B /* GAPagerLayout.swift */,
-				D6DC97561E6B4E900007565B /* GALogExtension.swift */,
-				D6BF8CBE1E6C5B1F0065A26B /* GAReusableController.swift */,
-			);
-			path = GAPagerViewController;
-			sourceTree = "<group>";
-		};
-		D6DC975A1E6C4F980007565B /* GAReuseQueue */ = {
-			isa = PBXGroup;
-			children = (
-				D6DC975B1E6C4FE90007565B /* GAReuseQueue.swift */,
-				D6BF8CBC1E6C54390065A26B /* GAReusableObject.swift */,
-			);
-			path = GAReuseQueue;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D607227F1E759C0A008A48E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60722861E759C0A008A48E4 /* GAPagerViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		D60722811E759C0A008A48E4 /* GAPagerViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D607228B1E759C0A008A48E4 /* Build configuration list for PBXNativeTarget "GAPagerViewController" */;
+			buildPhases = (
+				D607227D1E759C0A008A48E4 /* Sources */,
+				D607227E1E759C0A008A48E4 /* Frameworks */,
+				D607227F1E759C0A008A48E4 /* Headers */,
+				D60722801E759C0A008A48E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GAPagerViewController;
+			productName = GAPagerViewController;
+			productReference = D60722821E759C0A008A48E4 /* GAPagerViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D69E14DC1E59A1A200F0B6B2 /* PagerExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D69E14F11E59A1A200F0B6B2 /* Build configuration list for PBXNativeTarget "PagerExample" */;
@@ -141,6 +206,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D60722881E759C0A008A48E4 /* PBXTargetDependency */,
 			);
 			name = PagerExample;
 			productName = CollectionPager;
@@ -157,6 +223,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Alexey Glushkov";
 				TargetAttributes = {
+					D60722811E759C0A008A48E4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F9KW4FUEYZ;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
 					D69E14DC1E59A1A200F0B6B2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = F9KW4FUEYZ;
@@ -178,11 +250,19 @@
 			projectRoot = "";
 			targets = (
 				D69E14DC1E59A1A200F0B6B2 /* PagerExample */,
+				D60722811E759C0A008A48E4 /* GAPagerViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D60722801E759C0A008A48E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D69E14DB1E59A1A200F0B6B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,26 +277,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D607227D1E759C0A008A48E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60722921E759CC0008A48E4 /* GAReuseQueue.swift in Sources */,
+				D607229A1E759CCB008A48E4 /* GABasePagerViewConroller.swift in Sources */,
+				D607229D1E759CCB008A48E4 /* GALogExtension.swift in Sources */,
+				D60722931E759CC0008A48E4 /* GAReusableObject.swift in Sources */,
+				D607229F1E759CCB008A48E4 /* GAReusableController.swift in Sources */,
+				D607229B1E759CCB008A48E4 /* GAPagerCell.swift in Sources */,
+				D607229C1E759CCB008A48E4 /* GAPagerViewController.swift in Sources */,
+				D607229E1E759CCB008A48E4 /* GAPagerLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D69E14D91E59A1A200F0B6B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6DC97571E6B4E900007565B /* GALogExtension.swift in Sources */,
 				D69E14E51E59A1A200F0B6B2 /* SecondViewController.swift in Sources */,
-				D6DC97531E6B2B3D0007565B /* GAPagerLayout.swift in Sources */,
-				D6DC975C1E6C4FE90007565B /* GAReuseQueue.swift in Sources */,
 				D69E15021E59B43D00F0B6B2 /* DataViewController.swift in Sources */,
 				D69E14E11E59A1A200F0B6B2 /* AppDelegate.swift in Sources */,
-				D6DC97551E6B36BF0007565B /* GAPagerViewController.swift in Sources */,
-				D6BF8CBF1E6C5B1F0065A26B /* GAReusableController.swift in Sources */,
-				D6DC97511E6B2B3D0007565B /* GABasePagerViewConroller.swift in Sources */,
 				D69E14E31E59A1A200F0B6B2 /* FirstViewController.swift in Sources */,
-				D6DC97521E6B2B3D0007565B /* GAPagerCell.swift in Sources */,
-				D6BF8CBD1E6C54390065A26B /* GAReusableObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D60722881E759C0A008A48E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D60722811E759C0A008A48E4 /* GAPagerViewController */;
+			targetProxy = D60722871E759C0A008A48E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D69E14E61E59A1A200F0B6B2 /* Main.storyboard */ = {
@@ -238,6 +333,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D607228C1E759C0A008A48E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F9KW4FUEYZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GAPagerViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.GAPagerViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D607228D1E759C0A008A48E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F9KW4FUEYZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GAPagerViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.GAPagerViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D69E14EF1E59A1A200F0B6B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -334,6 +476,7 @@
 		D69E14F21E59A1A200F0B6B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9KW4FUEYZ;
 				INFOPLIST_FILE = PagerExample/Info.plist;
@@ -348,6 +491,7 @@
 		D69E14F31E59A1A200F0B6B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9KW4FUEYZ;
 				INFOPLIST_FILE = PagerExample/Info.plist;
@@ -362,6 +506,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D607228B1E759C0A008A48E4 /* Build configuration list for PBXNativeTarget "GAPagerViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D607228C1E759C0A008A48E4 /* Debug */,
+				D607228D1E759C0A008A48E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D69E14D81E59A1A200F0B6B2 /* Build configuration list for PBXProject "PagerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

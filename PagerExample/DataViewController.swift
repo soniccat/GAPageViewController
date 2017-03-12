@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GAPagerViewController
 
 class DataViewController: UIViewController, UIViewControllerRestoration {
     

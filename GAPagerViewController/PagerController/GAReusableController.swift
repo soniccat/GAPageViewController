@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController: GAReusableObject {
-    public var reuseIdentifier: String {
+    open var reuseIdentifier: String {
         get {
             return NSStringFromClass(type(of:self))
         }

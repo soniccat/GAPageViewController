@@ -12,7 +12,7 @@
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" customModule="CollectionPager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" customModule="PagerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -45,7 +45,7 @@
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="CollectionPager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="PagerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -104,7 +104,7 @@
         <!--Pager View Controller-->
         <scene sceneID="ufV-xP-tRo">
             <objects>
-                <viewController storyboardIdentifier="GAPagerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WWS-FJ-j2x" customClass="GAPagerViewController" customModule="CollectionPager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GAPagerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WWS-FJ-j2x" customClass="GAPagerViewController" customModule="GAPagerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Vz-Wm-6V3"/>
                         <viewControllerLayoutGuide type="bottom" id="fKm-xU-qgE"/>

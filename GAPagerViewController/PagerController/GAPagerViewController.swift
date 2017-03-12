@@ -8,14 +8,14 @@
 
 import UIKit
 
-@objc protocol PagerConrollerViewControllerDataSrouce {
+@objc public protocol PagerConrollerViewControllerDataSrouce {
     func pagerControllerNumberOfPages() -> Int
     func pagerControllerBindPage(controller: UIViewController, index: Int)
     func pagerControllerPageIndentifier(index: Int) -> String
     func pagerControllerCreateController(identifier: String) -> UIViewController
 }
 
-@objc protocol PagerConrollerViewControllerDelegate {
+@objc public protocol PagerConrollerViewControllerDelegate {
     func pagerControllerPageDidChange()
     func pagerControllerWillAppearPage(controller: UIViewController, index: Int)
     func pagerControllerWillDisappearPage(controller: UIViewController, index: Int)
@@ -35,8 +35,8 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         }
     }
     
-    var datasource: PagerConrollerViewControllerDataSrouce!
-    var delegate: PagerConrollerViewControllerDelegate?
+    public var datasource: PagerConrollerViewControllerDataSrouce!
+    public var delegate: PagerConrollerViewControllerDelegate?
     
     override open func awakeFromNib() {
         super.awakeFromNib()

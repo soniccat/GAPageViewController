@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GAPagerViewController
 
 class FirstViewController: UIViewController, PagerConrollerViewControllerDataSrouce, PagerConrollerViewControllerDelegate {
 
