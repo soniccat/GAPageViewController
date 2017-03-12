@@ -119,10 +119,10 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
     
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let nextPage = Int(targetContentOffset.pointee.x / collectionView.bounds.width)
-        NSLog("scrollViewWillEndDragging targetContentOffset %@", NSStringFromCGPoint(targetContentOffset.pointee))
+        gaLog("scrollViewWillEndDragging targetContentOffset %@", NSStringFromCGPoint(targetContentOffset.pointee))
         
         if nextPage != appearingIndex && appearingIndex != -1 {
-            NSLog("scrollViewWillEndDragging %d %d", nextPage, appearingIndex);
+            gaLog("scrollViewWillEndDragging %d %d", nextPage, appearingIndex);
             
             // change current appearing cell
             let nextCell = collectionView.cellForItem(at: IndexPath(row: nextPage, section: 0))
