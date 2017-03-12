@@ -17,16 +17,6 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
     open private(set) var currentIndex = 0
     private var appearingIndex = -1
     
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
-        initialize()
-    }
-    
-    private func initialize() {
-        initializeCollectionView()
-        view.addSubview(collectionView)
-    }
     
     private func initializeCollectionView() {
         collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: pagerLayout)
@@ -36,29 +26,50 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        // restore contentOffset
+        let width = self.view.bounds.width
+        collectionView.contentOffset = CGPoint(x: CGFloat(currentIndex) * width, y: 0)
+        
         registerCells()
+        
+        view.addSubview(collectionView)
     }
     
     override open func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
         
         coder.encode(currentIndex, forKey: "currentIndex")
-        coder.encode(appearingIndex, forKey: "appearingIndex")
     }
     
     override open func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
         
         currentIndex = coder.decodeInteger(forKey: "currentIndex")
-        appearingIndex = coder.decodeInteger(forKey: "appearingIndex")
         pagerLayout.currentIndex = currentIndex
-        
-        let width = collectionView.bounds.width
-        collectionView.contentOffset = CGPoint(x: CGFloat(currentIndex) * width, y: 0)
     }
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        prepareCollectionViewIfNeeded()
+    }
+    
+    private func prepareCollectionViewIfNeeded() {
+        if collectionView == nil {
+            // provide collectionView creation here to avoid requesting a cell at 0 index
+            // when currentIndex is different while restoration
+            
+            initializeCollectionView();
+            restoreCollectionViewIfNeeded();
+        }
+    }
+    
+    private func restoreCollectionViewIfNeeded() {
+        if currentIndex != 0 {
+            collectionView.setNeedsLayout()
+            collectionView.layoutIfNeeded() // is required to request the right cell
+        }
     }
     
     // MARK: To override
