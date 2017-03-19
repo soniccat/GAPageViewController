@@ -59,11 +59,15 @@ internal class GAPagerLayout: UICollectionViewLayout {
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        // to handle rotation
+        
         let offset = CGFloat(currentIndex) * pageWidth()
         return CGPoint(x: offset, y: proposedContentOffset.y)
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        // to handle swiping
+        
         var point = proposedContentOffset;
         
         var nextIndex = currentIndex
@@ -93,7 +97,27 @@ internal class GAPagerLayout: UICollectionViewLayout {
         let attrs = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         attrs?.alpha = 1.0
         
+        /*var frame = attrs?.frame
+        frame?.origin.x -= pageWidth();
+        attrs?.frame = frame!*/
+        
         return attrs
+    }
+    
+    override func prepare(forAnimatedBoundsChange oldBounds: CGRect) {
+        super.prepare(forAnimatedBoundsChange: oldBounds)
+    }
+    
+    override func finalizeAnimatedBoundsChange() {
+        super.finalizeAnimatedBoundsChange()
+    }
+    
+    override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
+        super.prepare(forCollectionViewUpdates: updateItems)
+    }
+    
+    override func finalizeCollectionViewUpdates() {
+        super.finalizeCollectionViewUpdates()
     }
     
     private func contentWidth() -> CGFloat {

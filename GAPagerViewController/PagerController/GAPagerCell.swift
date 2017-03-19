@@ -28,6 +28,8 @@ open class GAPagerCell: UICollectionViewCell {
     }
     
     open func startAddingController(ct: UIViewController, animated: Bool) {
+        backgroundColor = UIColor.lightGray
+        
         controller = ct
         prepareController(controller: ct)
         

@@ -9,8 +9,9 @@
 import UIKit
 import GAPagerViewController
 
-class FirstViewController: UIViewController, PagerConrollerViewControllerDataSrouce, PagerConrollerViewControllerDelegate {
+class FirstViewController: UIViewController, PagerConrollerViewControllerDataSrouce, PagerConrollerViewControllerDelegate, DataViewControllerDelegate {
 
+    var pageCount = 8
     var pagerController: GAPagerViewController!
     
     override func viewDidLoad() {
@@ -43,8 +44,11 @@ class FirstViewController: UIViewController, PagerConrollerViewControllerDataSro
         super.decodeRestorableState(with: coder)
     }
     
+    
+    // MARK: PagerConrollerViewControllerDelegate
+    
     func pagerControllerNumberOfPages() -> Int {
-        return 8
+        return pageCount
     }
     
     func pagerControllerBindPage(controller: UIViewController, index: Int) {
@@ -57,7 +61,10 @@ class FirstViewController: UIViewController, PagerConrollerViewControllerDataSro
     }
     
     func pagerControllerCreateController(identifier: String) -> UIViewController {
-        return DataViewController(nibName: "DataViewController", bundle: nil)
+        let controller = DataViewController(nibName: "DataViewController", bundle: nil)
+        controller.delegate = self
+        
+        return controller
     }
     
     func pagerControllerPageDidChange() {
@@ -78,6 +85,18 @@ class FirstViewController: UIViewController, PagerConrollerViewControllerDataSro
     
     func pagerControllerDidDisappearPage(controller: UIViewController, index: Int) {
         
+    }
+    
+    func pagerControllerIndexChanged(controller: UIViewController, newIndex: Int) {
+        let dataController = controller as! DataViewController
+        dataController.index = newIndex
+    }
+    
+    // MARK: DataViewControllerDelegate
+    
+    func dataViewControllerDeletePressed(controller: DataViewController) {
+        pageCount -= 1
+        pagerController.deletePages(pages: [controller.index])
     }
 }
 

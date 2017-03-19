@@ -21,12 +21,14 @@ import UIKit
     func pagerControllerWillDisappearPage(controller: UIViewController, index: Int)
     func pagerControllerDidAppearPage(controller: UIViewController, index: Int)
     func pagerControllerDidDisappearPage(controller: UIViewController, index: Int)
+    func pagerControllerIndexChanged(controller: UIViewController, newIndex: Int)
 }
 
-open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegate {
+open class GAPagerViewController: GABasePagerViewController {
     private let CellIdentifier = "PagerCell"
     private var queue = GAReuseQueue()
     private var bindedControllers:[Int:UIViewController] = [:]
+    //private var deletingControllers:[Int:UIViewController] = [:]
     
     // Define how many additional controllers we want to keep in the memory
     public var bindControllerRange = 1 {
@@ -152,7 +154,33 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         finishRemovingController(cell: pagerCell, index: index)
     }
     
-    // MARK: work with bindedControllers
+    override open func willDeletePages(pages: [Int]) {
+        super.willDeletePages(pages: pages)
+        
+        for (index, _) in bindedControllers {
+            if pages.contains(index) {
+                bindedControllers[index] = nil
+                offsetBindedControllers(offset: -pages.count)
+            }
+        }
+    }
+    
+    override open func onClearDeletingPage() {
+        super.onClearDeletingPage()
+        
+        if deletingPage != nil {
+            let pagerCell = deletingPage as! GAPagerCell
+            
+            if let ctrl = pagerCell.controller {
+                queue.enqueue(obj: ctrl)
+                gaLog("queue size %d", queue.count)
+            
+                //prebindControllers()
+            }
+        }
+    }
+    
+    // MARK: bindedControllers managing
     
     private func updateBindedControllers() {
         for (index, v) in bindedControllers {
@@ -169,14 +197,26 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         gaLog("binded size %d after add", bindedControllers.count)
     }
     
-    private func clearBindedController(index:Int) {
+    private func clearBindedController(index: Int) {
         bindedControllers[index] = nil
         gaLog("binded size %d after clear", bindedControllers.count)
     }
     
-    //
+    private func offsetBindedControllers(offset: Int) {
+        var newBindedControllers:[Int:UIViewController] = [:]
+        for (index, v) in bindedControllers {
+            let newIndex = index + offset
+            newBindedControllers[index + offset] = v
+            delegate?.pagerControllerIndexChanged(controller: v, newIndex: newIndex)
+        }
+        
+        gaLog("offsetBindedControllers %d", offset)
+        bindedControllers = newBindedControllers
+    }
     
-    func startAddingControllerIfNeeded(cell: GAPagerCell, index:Int) {
+    // MARK: controllers managing
+    
+    private func startAddingControllerIfNeeded(cell: GAPagerCell, index:Int) {
         if cell.controller == nil {
             startAddingController(cell: cell, index: index)
             
@@ -185,7 +225,7 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         }
     }
     
-    func startAddingController(cell: GAPagerCell, index:Int) {
+    private func startAddingController(cell: GAPagerCell, index:Int) {
         let controller = ensuredPageController(index: index)
         
         addChildViewController(controller)
@@ -193,23 +233,23 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         controller.didMove(toParentViewController: self)
     }
     
-    func finishAddingController(cell: GAPagerCell, index:Int) {
+    private func finishAddingController(cell: GAPagerCell, index:Int) {
         cell.finishAddingController()
     }
     
-    func startRemovingController(cell: GAPagerCell, index:Int) {
+    private func startRemovingController(cell: GAPagerCell, index:Int) {
         cell.startRemovingController(animated: true)
     }
     
-    func finishRemovingController(cell: GAPagerCell, index:Int) {
-        let ctrl = cell.controller
+    private func finishRemovingController(cell: GAPagerCell, index:Int) {
+        let ctrl: UIViewController! = cell.controller
         
         ctrl?.willMove(toParentViewController: nil)
         cell.finishRemovingController()
         // we enque the controller in updateBindedControllers
     }
     
-    func ensuredPageController(index: Int) -> UIViewController {
+    private func ensuredPageController(index: Int) -> UIViewController {
         var controller = bindedControllers[index]
         let identifier = datasource.pagerControllerPageIndentifier(index: index)
         
@@ -221,9 +261,12 @@ open class GAPagerViewController: GABasePagerViewController, GAReuseQueueDelegat
         return controller!
     }
     
-    func prepareController(controller: UIViewController) {
+    private func prepareController(controller: UIViewController) {
         controller.view.frame = view.bounds
     }
+}
+
+extension GAPagerViewController: GAReuseQueueDelegate {
     
     public func createObject(reuseIdentifier: String) -> GAReusableObject {
         return datasource.pagerControllerCreateController(identifier: reuseIdentifier)

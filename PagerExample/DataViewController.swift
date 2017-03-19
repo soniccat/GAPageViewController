@@ -9,10 +9,16 @@
 import UIKit
 import GAPagerViewController
 
+protocol DataViewControllerDelegate {
+    func dataViewControllerDeletePressed(controller: DataViewController)
+}
+
 class DataViewController: UIViewController, UIViewControllerRestoration {
     
     @IBOutlet var label: UILabel!
     @IBOutlet var logLabel: UILabel!
+    
+    public var delegate: DataViewControllerDelegate?
     
     override var reuseIdentifier: String {
         get {
@@ -20,7 +26,7 @@ class DataViewController: UIViewController, UIViewControllerRestoration {
         }
     }
     
-    var index = 0
+    public var index = 0
     var appearCount: Int = 0
     var disappearCount: Int = 0
     var log: [String] = []
@@ -63,6 +69,8 @@ class DataViewController: UIViewController, UIViewControllerRestoration {
     
     public func bind(anIndex: Int) {
         index = anIndex
+        NSLog("bind %d", anIndex)
+        
         log = []
         appearCount = 0
         disappearCount = 0
@@ -128,5 +136,9 @@ class DataViewController: UIViewController, UIViewControllerRestoration {
     private func updateText() {
         label.text = String(format: "%p %d %d", self, appearCount, disappearCount)
         logLabel.text = log.joined(separator: "\n")
+    }
+    
+    @IBAction func onDeletePressed() {
+        delegate?.dataViewControllerDeletePressed(controller: self)
     }
 }

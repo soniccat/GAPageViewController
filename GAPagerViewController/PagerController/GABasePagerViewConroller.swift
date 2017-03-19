@@ -14,6 +14,9 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
     open private(set) var collectionView: UICollectionView!
     private var pagerLayout = GAPagerLayout()
     
+    internal var deletingIndex: Int = -1
+    internal var deletingPage: UICollectionViewCell?
+    
     open private(set) var currentIndex = 0
     private var appearingIndex = -1
     
@@ -111,6 +114,11 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
     open func pageDidDisappear(cell: UICollectionViewCell, index: Int) {
     }
     
+    open func willDeletePages(pages: [Int]) {
+    }
+    
+    open func onClearDeletingPage() {
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -178,14 +186,27 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
             let currentCell = collectionView.cellForItem(at: IndexPath(row: currentIndex, section: 0))!
             pageWillDisappear(cell: currentCell, index: currentIndex)
         }
+        
+        //if (currentIndex-1...currentIndex+1).contains(deletingIndex) {
+            if let cell = deletingPage {
+                pageWillDisappear(cell: cell, index: deletingIndex)
+            }
+        //}
     }
     
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         gaLog("collectionView didEndDisplaying %d %d", indexPath.row, appearingIndex);
         
-        if appearingIndex == indexPath.row {
+        var needClearDeletingPage = false
+        
+        // handle disappearing deleting cell
+        if cell == deletingPage {
+            needClearDeletingPage = true
+            
+        } else if appearingIndex == indexPath.row {
             // After a long swipe the right page can start decelerating which triggers viewWillAppear
             // and almost immediately viewWillDisappear. Here we rollback to the currentIndex.
+            
             pageWillDisappear(cell: cell, index: indexPath.row)
             
             let cell = collectionView.cellForItem(at: IndexPath(row: currentIndex, section: 0))!
@@ -195,6 +216,12 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
         }
         
         pageDidDisappear(cell: cell, index: indexPath.row)
+        
+        if needClearDeletingPage {
+            deletingPage = nil
+            deletingIndex = -1
+            onClearDeletingPage()
+        }
         
         let width = collectionView.bounds.width
         let index = Int((collectionView.contentOffset.x + width / 2) / collectionView.bounds.width)
@@ -257,5 +284,26 @@ open class GABasePagerViewController: UIViewController, UICollectionViewDataSour
         }
         
         return resutl
+    }
+    
+    
+    // MARK: page managing
+    
+    public func deletePages(pages: [Int]) {
+        if pages.contains(currentIndex) {
+            if let cell = collectionView.cellForItem(at: IndexPath(row: currentIndex, section: 0)) {
+                deletingIndex = currentIndex
+                deletingPage = cell
+            }
+        }
+        
+        willDeletePages(pages: pages)
+        collectionView.deleteItems(at: pathes(pages: pages))
+    }
+    
+    private func pathes(pages: [Int]) -> [IndexPath] {
+        return pages.map({ (index: Int) -> IndexPath in
+            return IndexPath(row: index, section: 0)
+        })
     }
 }

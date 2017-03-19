@@ -10,7 +10,7 @@ import UIKit
 
 extension NSObject {
     public func gaLog(_ format: String, _ args: CVarArg...) {
-        #if GADEBUG
+        #if DEBUG
             withVaList(args) { NSLogv(format, $0) }
         #endif
     }
